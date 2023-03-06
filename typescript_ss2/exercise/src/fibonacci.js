@@ -8,7 +8,7 @@ function fibonacci(x) {
 }
 var number = 10;
 var count = 0;
-console.log("Da\u1EF9 ".concat(number, " s\u1ED1 fibonacci l\u00E0: "));
+console.log("\u0110\u00E2y l\u00E0  d\u00E3y ".concat(number, " s\u1ED1 fibonacci l\u00E0   : "));
 for (var i = 0; i < number; i++) {
     console.log(fibonacci(i));
     count += fibonacci(i);

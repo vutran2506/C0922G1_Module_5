@@ -8,7 +8,7 @@ function fibonacci(x: number):number {
 
 let number:number =10;
 let count :number = 0;
-console.log(`Daỹ ${number} số fibonacci là: `)
+console.log(`Đây là  dãy ${number} số fibonacci là   : `)
 for (let i = 0; i < number; i++) {
     console.log(fibonacci(i));
     count += fibonacci(i);
