@@ -1,16 +1,16 @@
-function fibonacci(x: number):number {
-    if (x <= 1) {
-        return x;
+function fibonacci(num: number):number {
+    if (num <= 1) {
+        return num;
     } else {
-        return fibonacci(x - 1) + fibonacci(x - 2);
+        return fibonacci(num - 1) + fibonacci(num - 2);
     }
 }
 
-let number:number =10;
+let num:number =10;
 let count :number = 0;
-console.log(`Đây là  dãy ${number} số fibonacci là   : `)
-for (let i = 0; i < number; i++) {
+console.log(`Đây là  dãy ${num} số fibonacci là   : `)
+for (let i = 0; i < num; i++) {
     console.log(fibonacci(i));
     count += fibonacci(i);
 }
-console.log(`Tổng ${number} số fibonacci là: ${count}`);
+console.log(`Tổng ${num} số fibonacci là: ${count}`);

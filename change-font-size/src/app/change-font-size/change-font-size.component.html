@@ -1,0 +1,8 @@
+<p>change-font-size works!</p>
+<div>
+  <label>Enter font Size(px)</label>
+  <input #element type="range" min="9" max="72" value="18"  (change)="changeFontSizeValue(element.value)">
+  <p class="output" [style.fontSize.px]="fontSize">
+    This is a paragraph
+  </p>
+</div>
