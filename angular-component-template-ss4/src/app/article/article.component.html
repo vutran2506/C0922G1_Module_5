@@ -1,0 +1,33 @@
+<div class="row" style="background: #caced1">
+  <h2 style="text-align: center;font-family: Consolas;font-size: 100px">Today's article</h2>
+
+  <table class="table table-success table-striped" style="margin-left: 10px">
+    <tr *ngFor="let article of articles">
+      <td>{{article.title}}</td>
+      <td><a href="{{article.url}}" target="_blank">Xem chi tiết</a></td>
+      <td><app-like></app-like></td>
+    </tr>
+  </table>
+  <div style="margin-left: 20px">
+    <br>
+    <h2>Article Information</h2>
+    <label style="font-size: 20px">Title:</label><br>
+    <textarea [(ngModel)]="article.title" cols="70"></textarea>
+
+    <br>
+    <label>Url:</label>
+    <br>
+    <textarea [(ngModel)]="article.url" cols="70"></textarea>
+    <br>
+    <button style="float: left" (click)="addNewArticle()" class="btn btn-primary">Add</button>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+</div>
+
+
+
+
