@@ -1,0 +1,85 @@
+<div class="modal" tabindex="-1" id="editModal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sửa thông tin khách hàng <i class="fa-sharp fa-solid fa-user"></i></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form  >
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Họ Tên: </label>
+            <div class="col-sm-10">
+              <input type="hidden" id="idEdit">
+              <input type="text" id="nameEdit"  class="form-control" name="name">
+
+            </div>
+          </div>
+          <input type="hidden" name="validate" value="edit">
+          <input type="hidden" name="modal" value="edit">
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Ngày Sinh</label>
+            <div class="col-sm-10">
+              <input type="date" id="dateOfBirthEdit"  class="form-control"
+                     name="birthday">
+
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Giới Tính</label>
+            <div class="col-sm-10">
+              <input type="radio" id="genderS1" checked  name="gender"
+                     class="form-check-input"
+                     value="true"> Nam
+              <input type="radio" id="genderS2"  style="margin-left: 25px"
+                     name="gender"
+                     class="form-check-input" value="false"> Nữ
+
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Số CMND</label>
+            <div class="col-sm-10">
+              <input type="number" id="iDCardEdit" class="form-control"
+                     name="iDCard">
+
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Số Điện Thoại </label>
+            <div class="col-sm-10">
+              <input id="phoneNumberEdit" type="number" class="form-control"
+                     name="phoneNumber">
+
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Email </label>
+            <div class="col-sm-10">
+              <input type="email" id="emailEdit" class="form-control" name="email">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Địa Chỉ </label>
+            <div class="col-sm-10">
+              <input type="text" id="addressEdit"  class="form-control"
+                     name="address">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Kiểu Khách</label>
+            <div class="col-sm-10">
+              <select  id="typeEdit" class="form-select" name="customerType">
+                <option ></option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-primary">Xác Nhận</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

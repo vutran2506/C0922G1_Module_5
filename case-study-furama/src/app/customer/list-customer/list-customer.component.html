@@ -1,0 +1,211 @@
+<!--Content-->
+<div class="row" style="height:75px">
+  <nav class="navbar navbar-light" style="background-color: teal">
+    <div class="container-fluid" style="position: relative">
+      <a class="navbar-brand"
+         href="#">Trang Chủ</a>
+
+      <button class="btn btn-outline-light" style="position: absolute;left: 150px" data-bs-toggle="modal"
+              data-bs-target="#addmodal">Thêm Khách Hàng
+      </button>
+      <form  style="position:absolute ;top: 1px;right: 30px"
+             class="d-flex">
+        <input class="form-control me-2" type="search" name="name" placeholder="Tên Khách Hàng"
+               aria-label="Search">
+        <input class="form-control me-2" type="search" name="type" placeholder="Loại Khách Hàng"
+               aria-label="Searcase_studych">
+        <button class="btn btn-outline-light" type="submit">Tìm</button>
+      </form>
+    </div>
+  </nav>
+</div>
+<div class="bgimg" style="margin-bottom: -80px">
+  <br> <br>
+  <div class="row" ><h1 style="text-align: center">Danh Sách Khách Hàng</h1></div>
+  <br>
+  <br>
+  <div id="checkTable">
+    <table class="table" style="backdrop-filter: blur(10px);color: black;font-weight: bold">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Họ Tên</th>
+        <th>Ngày Sinh</th>
+        <th>Giới Tính</th>
+        <th>CMND</th>
+        <th>Số Điện Thoại</th>
+        <th>Email</th>
+        <th>Địa Chỉ</th>
+        <th>Loại Khách</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>Nguyễn Thị Hào</td>
+        <td>1970-11-07</td>
+        <td>Nữ</td>
+        <td>643431213</td>
+        <td>0945423362</td>
+        <td>thihao07@gmail.com</td>
+        <td>23 Nguyễn Hoàng, Đà Nẵng</td>
+        <td>Member</td>
+        <td>
+          <button class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#editModal">
+            <i class="fa-sharp fa-solid fa-pen-to-square"></i>Sửa</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" data-bs-toggle="modal"
+                  data-bs-target="#deleteModal"><i
+            class="fa-sharp fa-solid fa-user-slash"></i>Xoá</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Phạm Xuân Diệu</td>
+        <td>1992-08-08</td>
+        <td>Nam</td>
+        <td>865342123</td>
+        <td>0954333333</td>
+        <td>xuandieu92@gmail.com</td>
+        <td>K77/22 Thái Phiên, Quảng Trị</td>
+        <td>Gold</td>
+        <td>
+          <button class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#editModal">
+            <i class="fa-sharp fa-solid fa-pen-to-square"></i>Sửa</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" data-bs-toggle="modal"
+                  data-bs-target="#deleteModal"><i
+            class="fa-sharp fa-solid fa-user-slash"></i>Xoá</button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Trương Đình Nghệ</td>
+        <td>1990-02-27</td>
+        <td>Nam</td>
+        <td>488645199</td>
+        <td>0373213122</td>
+        <td>nghenhan2702@gmail.com</td>
+        <td>K323/12 Ông Ích Khiêm, Vinh</td>
+        <td>Diamond</td>
+        <td>
+          <button class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#editModal">
+            <i class="fa-sharp fa-solid fa-pen-to-square"></i>Sửa</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" data-bs-toggle="modal"
+                  data-bs-target="#deleteModal"><i
+            class="fa-sharp fa-solid fa-user-slash"></i>Xoá</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <center>
+      <a class="btn btn-light" id="pre">Previous</a>
+      <button id="pagez" class="btn btn-outline-light">1</button>
+      <a class="btn btn-light" id="nex">Next</a>
+    </center>
+    <br>
+    <br>
+  </div>
+  <div class="row">
+    <div style="background: cadetblue" class="row">
+      <div class="col-1" style="background: cadetblue"></div>
+      <div class="col-3" style="background: #bcbebf">
+        <h1 style="color: darkkhaki;text-align: center;margin-top: 30px">Hướng Dẫn Di Chuyển</h1>
+        <p style="text-align: center;text-align: left">Khu nghỉ dưỡng Furama là cơ sở hàng đầu để <br>
+          khám phá một trong những điểm đến hấp dẫn <br>
+          nhất Châu Á. Chỉ cách Đà Nẵng một quãng lái xe<br>
+          ngắn là bốn Di sản Văn hóa Thế giới được UNESCO công nhận:</p>
+        <h1><a href="#" class="btn" style="color: white;background: teal"><i class="fa-sharp fa-solid fa-location-dot"> &ensp;Xem Trên Bản Đồ</i></a>
+        </h1>
+        <h2 style="color: darkkhaki">Địa Điểm</h2>
+        <br>
+        <p><b>1. Cố đô huế &ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;2 tiếng</b></p>
+        <hr>
+        <p><b>2. Phố cổ Hội An &ensp;&ensp;&ensp;&ensp;&ensp;30 phút</b></p>
+        <hr>
+        <p><b>3. Thánh địa Mỹ Sơn &ensp;&ensp;&ensp;&ensp;&ensp;90 phút</b></p>
+        <hr>
+        <p><b>4. Động Phong Nha &ensp;&ensp;&ensp;&ensp;&ensp;3 tiếng</b></p>
+      </div>
+      <div class="col-3" style="margin-top: 30px;text-align: center">
+        <a style="color: #5c636a;text-decoration: none" href="">News</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Rack rate</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Lifestyle Bog</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Work with us</a>
+        <br>
+        <br>
+        <a style="color: #5c636a;text-decoration: none" href="">Contact us</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="margin-left: 130px"><img
+          src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png"
+          width="760" height="90"></div>
+      </div>
+      <div class="col-4" style="margin-top: 40px">
+        <h5 style="color: darkkhaki;">Contact US</h5>
+        <br>
+        <p style="font-size: 17px">
+          <i class="fa-sharp fa-solid fa-location-dot"></i>
+          103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son<br> District, Danang City, Vietnam<br>
+          Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666<br>
+          Email: reservation@furamavietnam.com *<a href="https://furamavietnam.com/undefined/" style="color: black;text-decoration: none">www.furamavietnam.com</a> <br> GDS Codes: Amadeus-GD DADFUR,
+          Galileo/Apollo-GD 16236<br>, Sabre-GD 032771, Worldspan- GD DADFU
+        </p>
+        <hr>
+        <a href="https://www.facebook.com/furamaresort/"><img
+          src="https://furamavietnam.com/wp-content/uploads/2019/06/incon-Facbook-1.png"></a>
+        <a href="https://www.instagram.com/furama_resort_and_villas/?hl=vi"><img src="https://furamavietnam.com/wp-content/uploads/2019/06/social-ins.png"></a>
+        <a href="https://www.youtube.com/user/furamaresortvietnam/featured"><img src="https://furamavietnam.com/wp-content/uploads/2021/10/social-youtube.png"></a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="margin-left: 300px">© 2018 Furama Resort Danang </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Xoá Khách Hàng-->
+<div class="modal" tabindex="-1" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xác Nhận Xóa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form >
+        <div class="modal-body">
+          <p>Bạn có chắc chắn muốn xóa <b>
+            <span id="nameDelete"></span>
+          </b> ?</p>
+        </div>
+        <input type="hidden" name="id" id="idDelete">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-primary">Xóa</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

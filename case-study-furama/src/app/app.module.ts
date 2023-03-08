@@ -10,6 +10,11 @@ import { ContentComponent } from './layout/content/content.component';
 import { ListFacilityComponent } from './facility/list-facility/list-facility.component';
 import { CreateFacilityComponent } from './facility/create-facility/create-facility.component';
 import { EditFacilityComponent } from './facility/edit-facility/edit-facility.component';
+import { ListCustomerComponent } from './customer/list-customer/list-customer.component';
+import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
+import { CreateCustomerComponent } from './customer/create-customer/create-customer.component';
+import { ListContractComponent } from './contract/list-contract/list-contract.component';
+import { CreateContractComponent } from './contract/create-contract/create-contract.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +24,12 @@ import { EditFacilityComponent } from './facility/edit-facility/edit-facility.co
     ContentComponent,
     ListFacilityComponent,
     CreateFacilityComponent,
-    EditFacilityComponent
+    EditFacilityComponent,
+    ListCustomerComponent,
+    EditCustomerComponent,
+    CreateCustomerComponent,
+    ListContractComponent,
+    CreateContractComponent
   ],
   imports: [
     BrowserModule,
