@@ -6,45 +6,64 @@ import {IRatingUnit} from "../irating-unit";
   templateUrl: './rating-bar.component.html',
   styleUrls: ['./rating-bar.component.css']
 })
-export class RatingBarComponent implements OnInit,OnChanges {
-@Input() max=15;
-@Input() ratingValue = 8;
-@Input() showRatingValue = true;
-@Output() rateChange = new EventEmitter<number>();
-ratingUnits : Array<IRatingUnit> = [];
+export class RatingBarComponent implements OnInit {
+  @Input() value: number;
+  ratings: IRatingUnit[] = [
+    {
+      value: 1,
+      active: false
+    },
+    {
+      value: 2,
+      active: false
+    },
+    {
+      value: 3,
+      active: false
+    },
+    {
+      value: 4,
+      active: false
+    },
+    {
+      value: 5,
+      active: false
+    },
+    {
+      value: 6,
+      active: false
+    },
+    {
+      value: 7,
+      active: false
+    },
+    {
+      value: 8,
+      active: false
+    },
+    {
+      value: 9,
+      active: false
+    },
+    {
+      value: 10,
+      active: false
+    }
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.calculate(this.max, this.ratingValue);
   }
 
-  select(index) {
-    this.ratingValue = index + 1;
-    this.ratingUnits.forEach((item, idx) => item.active = idx < this.ratingValue);
-    this.rateChange.emit(this.ratingValue);
-  }
-  enter(index) {
-    this.ratingUnits.forEach((item, idx) => item.active = idx <= index);
-  }
-  reset() {
-    this.ratingUnits.forEach((item, idx) => item.active = idx < this.ratingValue);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if ('max' in changes) {
-      let max = changes.max.currentValue;
-      max = typeof max === 'undefined' ? 5 : max;
-      this.max = max;
-      this.calculate(max, this.ratingValue);
+  rate(value: number): void {
+    this.value = value;
+    for (let i = 0; i < this.ratings.length; i++) {
+      if (this.ratings[i].value <= value) {
+        this.ratings[i].active = true;
+      } else {
+        this.ratings[i].active = false;
+      }
     }
-  }
-
-  calculate(max, ratingValue) {
-    this.ratingUnits = Array.from({length: max},
-      (_, index) => ({
-        value: index + 1,
-        active: index < ratingValue
-      }));
   }
 }

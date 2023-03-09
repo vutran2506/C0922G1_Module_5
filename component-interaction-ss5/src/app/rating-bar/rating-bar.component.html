@@ -1,14 +1,15 @@
-
 <h1>Rating Bar</h1>
-<div *ngIf="showRatingValue">
-  <button type="button" class="btn btn-primary">  {{ ratingValue }}</button>
+<div>
+  <p style="font-size: 25px; margin-left: 25px">{{value}}</p>
 </div>
 
-<div class="rating-bar" (mouseleave)="reset()">
-  <div class="rating-unit"
-       [class.active]="item.active"
-       *ngFor="let item of ratingUnits; index as i"
-       (click)="select(i)" (mouseenter)="enter(i)">
-    {{ item.value }}
-  </div>
+
+<div class="rating-container" *ngFor="let rating of ratings" style="display: inline">
+  <span *ngIf="rating.active; then pink else grey"></span>
+  <ng-template #pink>
+    <div (click)="rate(rating.value)" class="rating-item pink">{{rating.value}}</div>
+  </ng-template>
+  <ng-template #grey>
+    <div (click)="rate(rating.value)" class="rating-item grey">{{rating.value}}</div>
+  </ng-template>
 </div>

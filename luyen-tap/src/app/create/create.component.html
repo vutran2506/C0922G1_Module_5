@@ -1,0 +1,9 @@
+
+<div class="form-group">
+  <label for="name">Tên</label>
+  <input type="text" #name id="name" class="form-control">
+  <label for="score">Điểm</label>
+  <input type="number" #score id="score" class="form-control">
+</div>
+
+<button type="button" class="btn btn-primary" (click)="addStudent(name.value,score.value)">Thêm</button>
