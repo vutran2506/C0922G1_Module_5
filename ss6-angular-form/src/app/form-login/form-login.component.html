@@ -1,0 +1,19 @@
+<h1 style="text-align: center;">Form Login</h1>
+<div class="d-flex justify-content-center "  >
+<form [formGroup]="rfLogin" (ngSubmit)="rfLogin">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" id="email" class="form-control"  formControlName="email">
+    <p *ngIf="rfLogin.controls.email?.touched  && rfLogin.controls.email?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+    <p *ngIf="rfLogin.controls.email?.touched && rfLogin.controls.email?.errors?.pattern" class="text-danger">Email phải đúng định dạng</p>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" class="form-control"  formControlName="password">
+    <p *ngIf="rfLogin.controls.password?.touched  && rfLogin.controls.password?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+    <p *ngIf="rfLogin.controls.password?.touched  && rfLogin.controls.password?.errors?.minlength" class="text-danger">Mật khẩu phải lớn hơn 6 ký tự</p>
+  </div>
+
+  <button  type="button" class="btn btn-primary">Login</button>
+</form>
+</div>

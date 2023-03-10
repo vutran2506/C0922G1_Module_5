@@ -45,7 +45,10 @@ export class StudentComponent implements OnInit {
     this.studentDetail =st;
   }
 
-  saveStudent(student: Student) {
-    this.students.push(student)
+
+  saveStudent($event: Student) {
+    this.students.push({
+      ...$event,vote:0
+    })
   }
 }

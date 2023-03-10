@@ -1,0 +1,68 @@
+<h1 style="text-align: center">Form Register</h1>
+<div class="row justify-content-center" >
+  <form [formGroup]="rfRegister" (ngSubmit)="register()" style="width:50% ">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" class="form-control"  formControlName="email">
+      <p *ngIf="rfRegister.controls.email?.touched  && rfRegister.controls.email?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+      <p *ngIf="rfRegister.controls.email?.touched && rfRegister.controls.email?.errors?.pattern" class="text-danger">Email phải đúng định dạng</p>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control"  formControlName="password">
+      <p *ngIf="rfRegister.controls.password?.touched  && rfRegister.controls.password?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+      <p *ngIf="rfRegister.controls.password?.touched  && rfRegister.controls.password?.errors?.minlength" class="text-danger">Mật khẩu phải lớn hơn 6 ký tự</p>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">ConfirmPassword</label>
+      <input type="password" id="confirmPassword" class="form-control"  formControlName="confirmPassword">
+      <p *ngIf="rfRegister.controls.confirmPassword?.touched  && rfRegister.controls.confirmPassword?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+      <p *ngIf="rfRegister.controls.confirmPassword?.touched  && rfRegister.controls.confirmPassword.value != rfRegister.controls.password.value" class="text-danger">Mật khẩu không trùng khớp</p>
+
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country:</label><br>
+      <select id="country" formControlName="country" >
+        <option value="">-- Select a country --</option>
+        <option  value="Vietnam">Vietnam</option>
+        <option value="United States">United States</option>
+        <option value="United Kingdom">United Kingdom</option>
+      </select>
+      <p *ngIf="rfRegister.controls.country?.touched  && rfRegister.controls.country?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="text" id="age" class="form-control"  formControlName="age">
+      <p *ngIf="rfRegister.controls.age?.touched  && rfRegister.controls.age?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+      <p *ngIf="rfRegister.controls.age?.touched  && rfRegister.controls.age?.errors?.min" class="text-danger">Tuổi phải lớn hơn 18</p>
+
+    </div>
+
+    <div class="form-group" >
+      <label >Gender:</label><br>
+      <input value="true" type="radio" id="male"formControlName="gender" >
+      <label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input value="false" type="radio" id="female"formControlName="gender" >
+      <label for="female">Female</label>
+      <p *ngIf="rfRegister.controls.gender?.pristine  && rfRegister.controls.gender?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" class="form-control"  formControlName="phone">
+      <p *ngIf="rfRegister.controls.phone?.touched  && rfRegister.controls.phone?.errors?.required" class="text-danger">Vui lòng nhập vào đây</p>
+      <p *ngIf="rfRegister.controls.phone?.touched  && rfRegister.controls.phone?.errors?.pattern" class="text-danger">Bạn nhập sai số điện thoại</p>
+
+    </div>
+
+    <button  type="button" class="btn btn-primary">Register</button>
+  </form>
+</div>
+
+

@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ProgressBarComponent implements OnInit {
   @Input() backgroundColor = '#D9D9D9';
   @Input() progressColor = '#4CAF50';
-  @Input() progress = 0;
+  @Input() progress = 5;
 
   constructor() { }
 
@@ -23,4 +23,12 @@ export class ProgressBarComponent implements OnInit {
     },1000);
   }
 
+  changValueAdd() {
+    this.progress+=1;
+   // this.loading();
+  }
+
+  changValueSub() {
+    this.progress-=1;
+  }
 }
