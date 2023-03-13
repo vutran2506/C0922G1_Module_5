@@ -1,21 +1,22 @@
 <!--Content-->
 <div class="row" style="height:75px">
-  <nav class="navbar navbar-light" style="background-color: teal">
+  <nav class="navbar navbar-light" >
     <div class="container-fluid" style="position: relative">
       <a class="navbar-brand"
          href="#">Trang Chủ</a>
 
-      <button class="btn btn-outline-light" style="position: absolute;left: 150px" data-bs-toggle="modal"
+      <button class="btn btn-bt success" style="position: absolute;left: 150px" data-bs-toggle="modal"
               data-bs-target="#addmodal">Thêm Khách Hàng
       </button>
-      <form  style="position:absolute ;top: 1px;right: 30px"
-             class="d-flex">
-        <input class="form-control me-2" type="search" name="name" placeholder="Tên Khách Hàng"
-               aria-label="Search">
-        <input class="form-control me-2" type="search" name="type" placeholder="Loại Khách Hàng"
-               aria-label="Searcase_studych">
-        <button class="btn btn-outline-light" type="submit">Tìm</button>
-      </form>
+      <app-create-customer (onCreate)="saveCustomer($event)"></app-create-customer>
+<!--      <form  style="position:absolute ;top: 1px;right: 30px"-->
+<!--             class="d-flex">-->
+<!--        <input class="form-control me-2" type="search" name="name" placeholder="Tên Khách Hàng"-->
+<!--               aria-label="Search">-->
+<!--        <input class="form-control me-2" type="search" name="type" placeholder="Loại Khách Hàng"-->
+<!--               aria-label="Searcase_studych">-->
+<!--        <button class="btn btn-primary" type="submit">Tìm</button>-->
+<!--      </form>-->
     </div>
   </nav>
 </div>
@@ -42,58 +43,17 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>Nguyễn Thị Hào</td>
-        <td>1970-11-07</td>
-        <td>Nữ</td>
-        <td>643431213</td>
-        <td>0945423362</td>
-        <td>thihao07@gmail.com</td>
-        <td>23 Nguyễn Hoàng, Đà Nẵng</td>
-        <td>Member</td>
-        <td>
-          <button class="btn btn-primary" data-bs-toggle="modal"
-                  data-bs-target="#editModal">
-            <i class="fa-sharp fa-solid fa-pen-to-square"></i>Sửa</button>
-        </td>
-        <td>
-          <button class="btn btn-danger" data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"><i
-            class="fa-sharp fa-solid fa-user-slash"></i>Xoá</button>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Phạm Xuân Diệu</td>
-        <td>1992-08-08</td>
-        <td>Nam</td>
-        <td>865342123</td>
-        <td>0954333333</td>
-        <td>xuandieu92@gmail.com</td>
-        <td>K77/22 Thái Phiên, Quảng Trị</td>
-        <td>Gold</td>
-        <td>
-          <button class="btn btn-primary" data-bs-toggle="modal"
-                  data-bs-target="#editModal">
-            <i class="fa-sharp fa-solid fa-pen-to-square"></i>Sửa</button>
-        </td>
-        <td>
-          <button class="btn btn-danger" data-bs-toggle="modal"
-                  data-bs-target="#deleteModal"><i
-            class="fa-sharp fa-solid fa-user-slash"></i>Xoá</button>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Trương Đình Nghệ</td>
-        <td>1990-02-27</td>
-        <td>Nam</td>
-        <td>488645199</td>
-        <td>0373213122</td>
-        <td>nghenhan2702@gmail.com</td>
-        <td>K323/12 Ông Ích Khiêm, Vinh</td>
-        <td>Diamond</td>
+      <tr *ngFor="let cus of customers;index as i">
+        <td>{{i+1}}</td>
+        <td>{{cus.name}}</td>
+        <td>{{cus.dateOfBirth}}</td>
+        <td *ngIf="cus.gender==true">Nam</td>
+        <td *ngIf="cus.gender==false">Nữ</td>
+        <td>{{cus.iCard}}</td>
+        <td>{{cus.phoneNumber}}</td>
+        <td>{{cus.email}}</td>
+        <td>{{cus.address}}</td>
+        <td>{{cus.customerType.name}}</td>
         <td>
           <button class="btn btn-primary" data-bs-toggle="modal"
                   data-bs-target="#editModal">
@@ -107,11 +67,13 @@
       </tr>
       </tbody>
     </table>
-    <center>
-      <a class="btn btn-light" id="pre">Previous</a>
-      <button id="pagez" class="btn btn-outline-light">1</button>
-      <a class="btn btn-light" id="nex">Next</a>
-    </center>
+    <div class="d-flex justify-content-center">
+      <a class="btn btn-primary" id="pre">Previous</a>
+      <button id="pagez" class="btn btn-light">1</button>
+      <a class="btn btn-primary" id="nex">Next</a>
+    </div>
+
+
     <br>
     <br>
   </div>
@@ -186,26 +148,26 @@
   </div>
 </div>
 <!--Xoá Khách Hàng-->
-<div class="modal" tabindex="-1" id="deleteModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Xác Nhận Xóa</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <form >
-        <div class="modal-body">
-          <p>Bạn có chắc chắn muốn xóa <b>
-            <span id="nameDelete"></span>
-          </b> ?</p>
-        </div>
-        <input type="hidden" name="id" id="idDelete">
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-          <button type="submit" class="btn btn-primary">Xóa</button>
-        </div>
-      </form>
+<!--<div class="modal" tabindex="-1" id="deleteModal">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title">Xác Nhận Xóa</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <form >-->
+<!--        <div class="modal-body">-->
+<!--          <p>Bạn có chắc chắn muốn xóa <b>-->
+<!--            <span id="nameDelete"></span>-->
+<!--          </b> ?</p>-->
+<!--        </div>-->
+<!--        <input type="hidden" name="id" id="idDelete">-->
+<!--        <div class="modal-footer">-->
+<!--          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>-->
+<!--          <button type="submit" class="btn btn-primary">Xóa</button>-->
+<!--        </div>-->
+<!--      </form>-->
 
-    </div>
-  </div>
-</div>
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

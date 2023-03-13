@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Student} from "../student";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-create',
@@ -7,20 +8,22 @@ import {Student} from "../student";
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
+  rfStudent: FormGroup;
 @Output() onCreate = new EventEmitter<Student>();
-
-createStudent:Student;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.rfStudent = new FormGroup({
+      name: new FormControl(),
+      score: new FormControl()
+    })
+
+
   }
 
-  addStudent(value: string, value2: number) {
-    this.createStudent ={
-      name:value,
-      score:value2
-    };
-    this.onCreate.emit(this.createStudent);
+  addStudent() {
+
+    this.onCreate.emit(this.rfStudent.value);
   }
 }

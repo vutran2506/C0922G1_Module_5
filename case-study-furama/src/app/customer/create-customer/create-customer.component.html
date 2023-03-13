@@ -6,65 +6,71 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
-        <form  method="post" >
+        <form [formGroup]="rfCreateCustomer" (ngSubmit)="createCustomer()">
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">ID: </label>
+            <div class="col-sm-10">
+              <input type="text" id="IdAdd"  class="form-control" formControlName="id">
+            </div>
+          </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Tên Khách Hàng: </label>
             <div class="col-sm-10">
-              <input type="text" id="nameAdd"  class="form-control" name="name">
+              <input type="text" id="nameAdd"  class="form-control" formControlName="name">
             </div>
           </div>
           <input type="hidden" name="validate" value="add">
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Ngày Sinh</label>
             <div class="col-sm-10">
-              <input type="date" id="dateOfBirthAdd"  class="form-control" name="birthday">
+              <input type="date" id="dateOfBirthAdd"  class="form-control" formControlName="dateOfBirth">
 
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Giới Tính</label>
             <div class="col-sm-10" id="genderCheck">
-              <input type="radio"   name="gender1" class="form-check-input"
-                     value="true"> Nam
-              <input type="radio" style="margin-left: 25px" name="gender1"
-                     class="form-check-input" value="false"> Nữ
+              <input type="radio"  class="form-check-input"
+                     value="true" formControlName="gender"> Nam
+              <input type="radio" style="margin-left: 25px"
+                     class="form-check-input" value="false" formControlName="gender"> Nữ
 
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Số CMND</label>
             <div class="col-sm-10">
-              <input type="number" id="iDCardAdd"  class="form-control" name="iDCard">
+              <input type="text" id="iDCardAdd"  class="form-control" formControlName="iCard">
 
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Số Điện Thoại </label>
             <div class="col-sm-10">
-              <input  id="phoneNumberAdd" type="number" class="form-control" name="phoneNumber">
+              <input  id="phoneNumberAdd" type="text" class="form-control" formControlName="phoneNumber">
 
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Email </label>
             <div class="col-sm-10">
-              <input type="email" id="emailAdd" class="form-control" name="email">
+              <input type="email" id="emailAdd" class="form-control" formControlName="email">
 
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Địa Chỉ </label>
             <div class="col-sm-10">
-              <input type="text" id="addressAdd"  class="form-control" name="address">
+              <input type="text" id="addressAdd"  class="form-control" formControlName="address">
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Kiểu Khách</label>
             <div class="col-sm-10">
 
-              <select >
-                <option ></option>
+              <select formControlName="customerType">
+                <option *ngFor="let customerType of customerTypes; index as i"
+                  value="{{customerType.id}}"> {{customerType.name}}</option>
               </select>
             </div>
           </div>

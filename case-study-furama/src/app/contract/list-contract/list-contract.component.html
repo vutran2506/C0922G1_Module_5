@@ -1,4 +1,4 @@
-<!--Content-->
+
 <div class="bg-img">
   <br>
   <h1 style="text-align: center"> Danh Sách Hợp Đồng</h1>
@@ -8,7 +8,6 @@
     <tr>
       <th>#</th>
       <th>Dịch Vụ</th>
-      <th>Nhân Viên</th>
       <th>Khách Hàng</th>
       <th>Ngày Bắt Đầu</th>
       <th>Ngày Kết Thúc</th>
@@ -18,83 +17,29 @@
     </tr>
     </thead>
     <tbody id="my-body">
-    <tr>
-      <th>1</th>
-      <th>Villa Beach Front</th>
-      <th>Nguyễn Văn An</th>
-      <th>Nguyễn Thị Hào</th>
-      <th>2020-12-08</th>
-      <th>2020-12-08</th>
-      <th>0đ</th>
-      <th>9000000đ</th>
+    <tr *ngFor="let cons of contrats;index as i">
+      <th>{{i+1}}</th>
+      <th>{{cons.facility.name}}</th>
+      <th>{{cons.customer.name}}</th>
+      <th>{{cons.startDay}}</th>
+      <th>{{cons.endDay}}</th>
+      <th>{{cons.cost}}</th>
+      <th></th>
       <th>
-        <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" >+</button>
+        <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" >+</button>&nbsp;&nbsp;
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttachFacility" onclick="showListAttachFacility(${data[i].id})">Danh Sách Dịch Vụ Đi Kèm</button>
       </th>
     </tr>
-    <tr>
-      <th>2</th>
-      <th>House Princess 01</th>
-      <th>Lê Văn Bình</th>
-      <th>Phạm Xuân Diệu</th>
-      <th>2020-07-14</th>
-      <th>2020-07-21</th>
-      <th>200000đ</th>
-      <th>15000000đ</th>
-      <th>
-        <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" >+</button>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttachFacility" onclick="showListAttachFacility(${data[i].id})">Danh Sách Dịch Vụ Đi Kèm</button>
-      </th>
-    </tr>
-    <tr>
-      <th>3</th>
-      <th>Room Twin 01</th>
-      <th>Hồ Thị Yến</th>
-      <th>Trương Đình Nghệ</th>
-      <th>2021-03-15</th>
-      <th>2021-03-17</th>
-      <th>50000đ</th>
-      <th>13000000đ</th>
-      <th>
-        <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" >+</button>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttachFacility" onclick="showListAttachFacility(${data[i].id})">Danh Sách Dịch Vụ Đi Kèm</button>
-      </th>
-    </tr>
-    <tr>
-      <th>4</th>
-      <th>Villa No Beach Front</th>
-      <th>Võ Công Toản</th>
-      <th>Dương Văn Quan</th>
-      <th>2021-01-14</th>
-      <th>2021-01-18</th>
-      <th>100000đ</th>
-      <th>100000000đ</th>
-      <th>
-        <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" >+</button>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttachFacility" onclick="showListAttachFacility(${data[i].id})">Danh Sách Dịch Vụ Đi Kèm</button>
-      </th>
-    </tr>
-    <tr>
-      <th>5</th>
-      <th>House Princess 02</th>
-      <th>Nguyễn Bỉnh Phát</th>
-      <th>Hoàng Trần Nhi Nhi</th>
-      <th>2021-07-14</th>
-      <th>2021-07-15</th>
-      <th>0đ</th>
-      <th>9000000đ</th>
-      <th>
-        <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#editModal" >+</button>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewAttachFacility" onclick="showListAttachFacility(${data[i].id})">Danh Sách Dịch Vụ Đi Kèm</button>
-      </th>
-    </tr>
+
     </tbody>
   </table>
-  <center>
-    <a class="btn btn-light" id="pre">Previous</a>
-    <button id="pagez" class="btn btn-outline-light">1</button>
-    <a class="btn btn-light" id="nex">Next</a>
-  </center>
+<div class="d-flex justify-content-center">
+  <a class="btn btn-primary" id="pre">Previous</a>
+  <button id="pagez" class="btn btn-light">1</button>
+  <a class="btn btn-primary" id="nex">Next</a>
+
+</div>
+
   <br>
   <br>
 </div>

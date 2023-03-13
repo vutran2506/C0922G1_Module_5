@@ -7,6 +7,9 @@ import { StudentComponent } from './student/student.component';
 import { VoteComponent } from './vote/vote.component';
 import { DetailComponent } from './detail/detail.component';
 import { CreateComponent } from './create/create.component';
+import {ReactiveFormsModule} from "@angular/forms";
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { CreateComponent } from './create/create.component';
     StudentComponent,
     VoteComponent,
     DetailComponent,
-    CreateComponent
+    CreateComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

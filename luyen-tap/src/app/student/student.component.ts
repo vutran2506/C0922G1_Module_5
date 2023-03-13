@@ -51,4 +51,5 @@ export class StudentComponent implements OnInit {
       ...$event,vote:0
     })
   }
+
 }

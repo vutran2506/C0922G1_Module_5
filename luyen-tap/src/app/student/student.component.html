@@ -9,7 +9,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let st of students;index as i" (click)="changeDetail(st)">
+  <tr *ngFor="let st of students; index as i" (click)="changeDetail(st)">
     <td scope="row">{{i+1}}</td>
     <td>{{st.name}}</td>
     <td>{{st.score}}</td>
