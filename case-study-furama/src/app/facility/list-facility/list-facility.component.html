@@ -1,16 +1,22 @@
 
+
 <div class="row" style="max-height: 350px; overflow: hidden;position: relative; text-align: center">
   <img src="https://furamavietnam.com/wp-content/uploads/2018/11/Vietnam_Danang_Furama_Resort_Exterior-Lagoon-Pool.jpg" style="height: 100%;">
   <p class="centered" style="position: absolute; top: 50%; font-family: '.VnCentury Schoolbook';
     left: 50%; transform: translate(-50%, -50%); font-size: 50px;color: aliceblue">ROOMS & SUITES</p>
 </div>
+<br>
+<div class="row">
+  <a routerLink="/facility/create"><button type="button" class="btn btn-primary">Thêm dịch vụ mới</button></a>
+</div>
+<br>
 <div class="bg-img">
   <br>
   <br>
   <br>
 
   <div class="row">
-    <ng-container *ngFor="let item of facilities">
+    <ng-container *ngFor="let item of facilityList">
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="card h-100" >
           <img [src]="item.image" class="card-img-top imgcard" alt="...">
