@@ -17,14 +17,15 @@
             <label class="col-sm-2 col-form-label">Tên Khách Hàng: </label>
             <div class="col-sm-10">
               <input type="text" id="nameAdd"  class="form-control" formControlName="name">
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.name.hasError('pattern') && rfCreateCustomer.controls.name.touched">Lỗi tên không đúng định dạng</p>
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.name.hasError('required') && rfCreateCustomer.controls.name.touched">Tên không được bỏ trống</p>
             </div>
           </div>
-          <input type="hidden" name="validate" value="add">
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Ngày Sinh</label>
             <div class="col-sm-10">
               <input type="date" id="dateOfBirthAdd"  class="form-control" formControlName="dateOfBirth">
-
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.dateOfBirth.hasError('required') && rfCreateCustomer.controls.dateOfBirth.touched">Vui lòng nhập ngày sinh</p>
             </div>
           </div>
           <div class="mb-3 row">
@@ -34,13 +35,14 @@
                      value="true" formControlName="gender"> Nam
               <input type="radio" style="margin-left: 25px"
                      class="form-check-input" value="false" formControlName="gender"> Nữ
-
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.gender.hasError('required') && rfCreateCustomer.controls.gender.touched">Vui lòng chọn giới tính</p>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Số CMND</label>
             <div class="col-sm-10">
               <input type="text" id="iDCardAdd"  class="form-control" formControlName="iCard">
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.iDCard.hasError('required') && rfCreateCustomer.controls.iDCard.touched">Vui lòng nhập số căn cước công dân</p>
 
             </div>
           </div>
@@ -48,6 +50,8 @@
             <label class="col-sm-2 col-form-label">Số Điện Thoại </label>
             <div class="col-sm-10">
               <input  id="phoneNumberAdd" type="text" class="form-control" formControlName="phoneNumber">
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.phoneNumber.hasError('required') && rfCreateCustomer.controls.phoneNumber.touched">Vui lòng nhập số điện thoại</p>
+
 
             </div>
           </div>
@@ -56,12 +60,14 @@
             <div class="col-sm-10">
               <input type="email" id="emailAdd" class="form-control" formControlName="email">
 
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.email.hasError('required') && rfCreateCustomer.controls.email.touched">Email không được bỏ trống</p>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Địa Chỉ </label>
             <div class="col-sm-10">
               <input type="text" id="addressAdd"  class="form-control" formControlName="address">
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.customerType.hasError('required') && rfCreateCustomer.controls.address.touched">Vui lòng nhập địa chỉ</p>
             </div>
           </div>
           <div class="mb-3 row">
@@ -69,9 +75,10 @@
             <div class="col-sm-10">
 
               <select formControlName="customerType">
-                <option *ngFor="let customerType of customerTypes; index as i"
-                  value="{{customerType.id}}"> {{customerType.name}}</option>
+                <option *ngFor="let customerType of customerTypes; "
+                  [ngValue]="customerType"> {{customerType.name}}</option>
               </select>
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.customerType.hasError('required') && rfCreateCustomer.controls.customerType.touched">Vui lòng chọn kiểu khách</p>
             </div>
           </div>
           <div class="modal-footer">

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerType} from '../../model/customer-type';
 import {Customer} from '../../model/customer';
 
@@ -37,19 +37,18 @@ export class CreateCustomerComponent implements OnInit {
   ngOnInit(): void {
     this.rfCreateCustomer = new FormGroup({
       id: new FormControl(),
-      name: new FormControl(),
-      dateOfBirth: new FormControl(),
-      gender: new FormControl(),
-      iCard: new FormControl(),
-      phoneNumber: new FormControl(),
-      email: new FormControl(),
-      address: new FormControl(),
-      customerType: new FormControl()
+      name: new FormControl('', [Validators.required]),
+      dateOfBirth: new FormControl('', [Validators.required]),
+      gender: new FormControl(1, [Validators.required]),
+      iDCard: new FormControl('', [Validators.required]),
+      phoneNumber: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.email, Validators.required]),
+      address: new FormControl('', [Validators.required]),
+      customerType: new FormControl('', [Validators.required])
     });
   }
 
   createCustomer() {
-    debugger
     this.onCreate.emit(this.rfCreateCustomer.value);
   }
 }

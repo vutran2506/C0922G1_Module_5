@@ -6,64 +6,71 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form  >
+        <form  [formGroup]="formEditCustomer" (ngSubmit)="submitEdit()" >
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Họ Tên: </label>
             <div class="col-sm-10">
               <input type="hidden" id="idEdit">
-              <input type="text" id="nameEdit"  class="form-control" name="name">
-
+              <input type="text" id="nameEdit"  class="form-control" formControlName="name">
+              <span style="color: red" *ngIf="formEditCustomer.controls.name.hasError('required')">
+                  không được để trống</span>
             </div>
           </div>
-          <input type="hidden" name="validate" value="edit">
-          <input type="hidden" name="modal" value="edit">
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Ngày Sinh</label>
             <div class="col-sm-10">
               <input type="date" id="dateOfBirthEdit"  class="form-control"
-                     name="birthday">
-
+                     formControlName="birthday">
+              <span style="color: red" *ngIf="formEditCustomer.controls.dateOfBirth.hasError('required')">
+                  không được để trống</span>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Giới Tính</label>
             <div class="col-sm-10">
-              <input type="radio" id="genderS1" checked  name="gender"
+              <input type="radio" id="genderS1" checked  formControlName="gender"
                      class="form-check-input"
                      value="true"> Nam
               <input type="radio" id="genderS2"  style="margin-left: 25px"
-                     name="gender"
+                     formControlName="gender"
                      class="form-check-input" value="false"> Nữ
-
+              <span style="color: red" *ngIf="formEditCustomer.controls.gender.hasError('required')">
+                  không được để trống</span>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Số CMND</label>
             <div class="col-sm-10">
               <input type="number" id="iDCardEdit" class="form-control"
-                     name="iDCard">
-
+                     formControlName="idCard">
+              <span style="color: red"
+                    *ngIf="formEditCustomer.controls.idCard.hasError('required')">  không được để trống</span>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Số Điện Thoại </label>
             <div class="col-sm-10">
               <input id="phoneNumberEdit" type="number" class="form-control"
-                     name="phoneNumber">
-
+                     formControlName="phoneNumber">
+              <span style="color: red"
+                    *ngIf="formEditCustomer.controls.phoneNumber.hasError('required')">  không được để trống</span>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Email </label>
             <div class="col-sm-10">
-              <input type="email" id="emailEdit" class="form-control" name="email">
+              <input type="email" id="emailEdit" class="form-control" formControlName="email">
+              <span style="color: red"
+                    *ngIf="formEditCustomer.controls.email.hasError('required')">  không được để trống</span>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Địa Chỉ </label>
             <div class="col-sm-10">
               <input type="text" id="addressEdit"  class="form-control"
-                     name="address">
+                     formControlName="address">
+              <span style="color: red"
+                    *ngIf="formEditCustomer.controls.address.hasError('required')">  không được để trống</span>
             </div>
           </div>
           <div class="mb-3 row">
@@ -72,6 +79,7 @@
               <select  id="typeEdit" class="form-select" name="customerType">
                 <option ></option>
               </select>
+
             </div>
           </div>
           <div class="modal-footer">
