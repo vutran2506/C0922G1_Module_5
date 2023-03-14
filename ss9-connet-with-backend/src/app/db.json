@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Apple"
+    },
+    {
+      "name": "Samsung",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Nokia"
+    },
+    {
+      "id": 5,
+      "name": "OPPO"
+    }
+  ],
+  "products": [
+    {
+      "id": 2,
+      "name": "Iphone X",
+      "price": 24000000,
+      "description": "98%",
+      "category": {
+        "id": 1,
+        "name": "Apple"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Hùng Báo",
+      "price": 200,
+      "description": "Dốt",
+      "category": {
+        "id": 1,
+        "name": "Apple"
+      }
+    }
+  ]
+}
