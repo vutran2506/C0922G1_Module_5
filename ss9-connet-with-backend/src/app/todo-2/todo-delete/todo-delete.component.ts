@@ -29,7 +29,7 @@ export class TodoDeleteComponent implements OnInit {
   }
   deleteTodo() {
     this.todoService.delete(this.id1).subscribe(() => {
-      this.router.navigateByUrl('/todo');
+      this.router.navigateByUrl('');
     });
   }
 }

@@ -28,7 +28,7 @@ export class CreateFacilityComponent implements OnInit {
     rentType: new FormControl(null, [Validators.required]),
     facilityType: new FormControl(null, [Validators.required])
   });
-  public idAdd: 1;
+  public idAdd: 1|2|3;
   public standardError: string;
   public descriptionError: string;
   public floorError: string;

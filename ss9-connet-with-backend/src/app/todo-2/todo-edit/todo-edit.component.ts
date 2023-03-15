@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 import {FormControl, FormGroup} from "@angular/forms";
-import {TodoService} from "../service/todo.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {TodoService} from "../service/todo.service";
 
 @Component({
   selector: 'app-todo-edit',
@@ -29,7 +29,7 @@ export class TodoEditComponent implements OnInit {
   }
   updateTodo() {
     this.todoService.update(this.id, this.todoForm.value).subscribe(() => {
-      this.router.navigateByUrl('/todo');
+      this.router.navigateByUrl('');
     });
   }
 }

@@ -1,28 +1,14 @@
 <!--Content-->
-<div class="row" style="height:75px">
-  <nav class="navbar navbar-light" >
-    <div class="container-fluid" style="position: relative">
-      <a class="navbar-brand"
-         href="#">Trang Chủ</a>
+<div class="row" >
 
-      <button class="btn btn-bt success" style="position: absolute;left: 150px" data-bs-toggle="modal"
-              data-bs-target="#addmodal">Thêm Khách Hàng
-      </button>
-<!--      <form  style="position:absolute ;top: 1px;right: 30px"-->
-<!--             class="d-flex">-->
-<!--        <input class="form-control me-2" type="search" name="name" placeholder="Tên Khách Hàng"-->
-<!--               aria-label="Search">-->
-<!--        <input class="form-control me-2" type="search" name="type" placeholder="Loại Khách Hàng"-->
-<!--               aria-label="Searcase_studych">-->
-<!--        <button class="btn btn-primary" type="submit">Tìm</button>-->
-<!--      </form>-->
     </div>
-  </nav>
-</div>
+
 <div class="bgimg" style="margin-bottom: -80px">
   <br> <br>
   <div class="row" ><h1 style="text-align: center">Danh Sách Khách Hàng</h1></div>
   <br>
+  <button routerLink="/customer/create" class="btn btn-btn success" >Thêm Khách Hàng
+  </button>
   <br>
   <div id="checkTable">
     <table class="table" style="backdrop-filter: blur(10px);color: black;font-weight: bold">
@@ -48,7 +34,7 @@
         <td>{{cus.dateOfBirth}}</td>
         <td *ngIf="cus.gender==true">Nam</td>
         <td *ngIf="cus.gender==false">Nữ</td>
-        <td>{{cus.iCard}}</td>
+        <td>{{cus.idCard}}</td>
         <td>{{cus.phoneNumber}}</td>
         <td>{{cus.email}}</td>
         <td>{{cus.address}}</td>
@@ -71,8 +57,6 @@
       <button id="pagez" class="btn btn-light">1</button>
       <a class="btn btn-primary" id="nex">Next</a>
     </div>
-
-
     <br>
     <br>
   </div>

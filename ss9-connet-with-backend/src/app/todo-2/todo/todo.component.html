@@ -8,8 +8,8 @@
     <ul>
       <li (click)="toggleTodo(i)" [class.complete]="todo.complete" *ngFor="let todo of todos; index as i">
         {{todo.content}}
-        <button routerLink="/todo/edit/{{todo.id}}" class="btn btn-outline-primary btn-sm">Edit</button>
-        <button routerLink="/todo/delete/{{todo.id}}" style="margin-left: 5px" class="btn btn-outline-danger btn-sm">Delete</button>
+        <button routerLink="todo/edit/{{todo.id}}" class="btn btn-outline-primary btn-sm">Edit</button>
+        <button routerLink="todo/delete/{{todo.id}}" style="margin-left: 5px" class="btn btn-outline-danger btn-sm">Delete</button>
       </li>
     </ul>
   </div>

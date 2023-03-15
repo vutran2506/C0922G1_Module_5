@@ -1,10 +1,5 @@
-<div class="modal" tabindex="-1" id="addmodal">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Thêm mới khách hàng <i class="fa-sharp fa-solid fa-user"></i></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+<br>
+<br>
       <div class="modal-body">
         <form [formGroup]="rfCreateCustomer" (ngSubmit)="createCustomer()">
           <div class="mb-3 row">
@@ -41,8 +36,8 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Số CMND</label>
             <div class="col-sm-10">
-              <input type="text" id="iDCardAdd"  class="form-control" formControlName="iCard">
-              <p class="errorForm" *ngIf="rfCreateCustomer.controls.iDCard.hasError('required') && rfCreateCustomer.controls.iDCard.touched">Vui lòng nhập số căn cước công dân</p>
+              <input type="text" id="iDCardAdd"  class="form-control" formControlName="idCard">
+              <p class="errorForm" *ngIf="rfCreateCustomer.controls.idCard.hasError('required') && rfCreateCustomer.controls.idCard.touched">Vui lòng nhập số căn cước công dân</p>
 
             </div>
           </div>
@@ -87,6 +82,3 @@
           </div>
         </form>
       </div>
-    </div>
-  </div>
-</div>

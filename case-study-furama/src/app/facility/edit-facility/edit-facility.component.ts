@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FacilityService} from '../../service/facility/facility.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-facility',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditFacilityComponent implements OnInit {
 
-  constructor() { }
+  constructor(private facilityService: FacilityService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }

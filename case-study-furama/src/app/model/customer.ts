@@ -5,7 +5,7 @@ export interface Customer {
   name?: string;
   dateOfBirth?: string;
   gender?: boolean;
-  iCard?: string;
+  idCard?: string;
   phoneNumber?: string;
   email?: string;
   address?: string;
