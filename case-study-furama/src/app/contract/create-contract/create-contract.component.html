@@ -26,12 +26,7 @@
               <p class="errorForm" *ngIf="contracts.controls.cost.hasError('required') && contracts.controls.cost.touched">Vui lòng nhập chi phí thuê</p>
             </div>
           </div>
-          <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Tổng Tiền</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" readonly id="tongTien">
-            </div>
-          </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Khách Hàng</label>
             <div class="col-sm-10">
@@ -52,7 +47,7 @@
               </select>
             </div>
           </div>
-            <button type="submit"  class="btn btn-primary">Thêm mới</button>
+            <button type="submit" [disabled]="!contracts.valid" class="btn btn-primary">Thêm mới</button>
         </form>
       </div>
 

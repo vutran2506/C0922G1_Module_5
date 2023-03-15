@@ -3,18 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SongComponent } from './component/song/song.component';
-import { CategoryComponent } from './component/category/category.component';
+import {ImageRoutingModule} from "./image/image-routing.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SongComponent,
-    CategoryComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ImageRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,8 +24,8 @@ export class CategoryEditComponent implements OnInit {
   }
 
   getCategory(id: number) {
-    return this.categoryService.findById(id).subscribe(category =>{
-      this.categoryForm= new FormGroup({
+    return this.categoryService.findById(id).subscribe(category => {
+      this.categoryForm = new FormGroup({
         name: new FormControl(category.name)
       });
     });
@@ -33,7 +33,7 @@ export class CategoryEditComponent implements OnInit {
 
   updateCategory(id: number) {
     const category = this.categoryForm.value;
-    this.categoryService.updateCategory(id, category).subscribe(()=>{
+    this.categoryService.updateCategory(id, category).subscribe(() => {
       alert('Cập nhập thành công')
     })
   }

@@ -624,6 +624,34 @@
           "name": "Room"
         }
       }
+    },
+    {
+      "id": "tPsXOXq",
+      "startDay": "",
+      "endDay": "",
+      "cost": "",
+      "customer": null,
+      "facility": {
+        "id": "2",
+        "name": "House Princess 01",
+        "area": "14000",
+        "cost": "5000000",
+        "image": "https://images.squarespace-cdn.com/content/v1/5aadf482aa49a1d810879b88/1626698419120-J7CH9BPMB2YI728SLFPN/1.jpg",
+        "maxPeople": "7",
+        "standard": "vip",
+        "description": "Có thêm bếp nướng",
+        "poolArea": "null",
+        "floor": "3",
+        "facilityFree": "null",
+        "rentType": {
+          "id": "3",
+          "name": "day"
+        },
+        "facilityType": {
+          "id": "2",
+          "name": "House"
+        }
+      }
     }
   ]
 }

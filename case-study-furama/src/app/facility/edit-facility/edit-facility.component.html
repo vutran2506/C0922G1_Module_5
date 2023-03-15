@@ -1,93 +1,110 @@
-<div class="modal" tabindex="-1" id="editModal">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sửa thông tin dịch vụ <i class="fa-sharp fa-solid fa-user"></i></h5>
-        <button type="button"  class="btn-close clearError" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form >
-          <input type="hidden" name="validate" value="edit">
-          <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Tên Dịch Vụ</label>
-            <div class="col-sm-10">
-              <input type="hidden" class="form-control" id="idEdit" >
-              <input type="text" class="form-control" id="nameEdit" >
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Diện Tích</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="areaEdit" >
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Chi Phí Thuê</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="costEdit">
-
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Số Người Tối Đa</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="maxPeopleEdit" >
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Kiểu Thuê</label>
-            <div class="col-sm-10">
-              <select class="form-control" id="rentTypeEdit" >
-                <option ></option>
-              </select>
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Loại Dịch Vụ</label>
-            <div class="col-sm-10">
-              <select class="form-control" id="facilityTypeEdit" onchange="newUpdate()"
-              >
-                <option ></option>
-              </select>
-            </div>
-          </div>
-          <div class="mb-3 row" id="standardEditCheck">
-            <label class="col-sm-2 col-form-label">Tiêu Chuẩn Phòng</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="standardEdit">
-            </div>
-          </div>
-          <div class="mb-3 row" id="descriptionEditCheck">
-            <label class="col-sm-2 col-form-label">Mô Tả Khác</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="descriptionEdit"
-              >
-            </div>
-          </div>
-          <div class="mb-3 row" id="poolAreaEdit">
-            <label class="col-sm-2 col-form-label">Diện Tích Hồ Bơi</label>
-            <div class="col-sm-10">
-              <input type="number" id="poolEdit" class="form-control" >
-            </div>
-          </div>
-          <div class="mb-3 row" id="numberOfFloorEdit">
-            <label class="col-sm-2 col-form-label">Số Tầng</label>
-            <div class="col-sm-10">
-              <input type="number" id="numberFloorEdit" class="form-control">
-            </div>
-          </div>
-          <div class="mb-3 row d-none" id="editFreeService">
-            <label class="col-sm-2 col-form-label">Dịch Vụ Miễn Phí</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="facilityFreeEdit" >
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button"  class="btn btn-secondary clearError" data-bs-dismiss="modal">Hủy</button>
-            <button type="submit" class="btn btn-primary">Xác Nhận</button>
-          </div>
-        </form>
+<br xmlns="http://www.w3.org/1999/html">
+<br>
+<div class="d-fex justify-content-center">
+  <form [formGroup]="formEditGroup" (ngSubmit)="updateFacility()">
+    <input type="hidden" name="validate" value="add">
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Loại Dịch Vụ</label>
+      <div class="col-sm-10">
+        <select  class="form-control" formControlName="facilityType" >
+          <option [value]="null"  [selected]="true" [disabled]="true" >Chọn Loại Dịch Vụ</option>
+          <option *ngFor="let x of facilityTypeList" class="form-control" [ngValue]="x"  >{{x.name}}</option>
+        </select>
+        <p class="errorForm" *ngIf="formEditGroup.controls.facilityType.hasError('required') && formEditGroup.controls.facilityType.touched">Vui lòng chọn loại dịch vụ</p>
       </div>
     </div>
-  </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Tên Dịch Vụ</label>
+      <div class="col-sm-10">
+        <input  type="text" class="form-control" formControlName="name">
+        <p class="errorForm" *ngIf="formEditGroup.controls.name.hasError('required') && formEditGroup.controls.name.touched">Vui lòng nhập tên dịch vụ</p>
+
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Diện Tích</label>
+      <div class="col-sm-10">
+        <input  type="number" class="form-control" formControlName="area">
+        <p class="errorForm" *ngIf="formEditGroup.controls.area.hasError('required') && formEditGroup.controls.area.touched">Vui lòng nhập diện tích sử dụng</p>
+
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Chi Phí Thuê</label>
+      <div class="col-sm-10">
+        <input   type="number" class="form-control" formControlName="cost">
+        <p class="errorForm" *ngIf="formEditGroup.controls.cost.hasError('required') && formEditGroup.controls.cost.touched">Vui lòng nhập chi phí thuê</p>
+
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Số Người Tối Đa</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" formControlName="maxPeople">
+        <p class="errorForm" *ngIf="formEditGroup.controls.maxPeople.hasError('required') && formEditGroup.controls.maxPeople.touched">Vui lòng nhập số người tối đa</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Kiểu Thuê</label>
+      <div class="col-sm-10">
+        <select  class="form-control" formControlName="rentType">
+          <option [value]="null" [selected]="true" [disabled]="true" >Chọn Kiểu Thuê</option>
+          <option *ngFor="let x of rentTypeList" class="form-control" [ngValue]="x" >{{x.name}}</option>
+        </select>
+        <p class="errorForm" *ngIf="formEditGroup.controls.rentType.hasError('required') && formEditGroup.controls.rentType.touched">Chọn kiểu thuê</p>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Hình Ảnh</label>
+      <div class="col-sm-10">
+        <input  type="text" class="form-control" formControlName="image">
+        <p class="urlImage" *ngIf="formEditGroup.controls.image.hasError('required') && formEditGroup.controls.image.touched">Hãy nhập link url để cho có hỉnh ảnh đẹp hơn :D</p>
+
+      </div>
+    </div>
+    <div  class="mb-3 row" id="standardAdd">
+      <label class="col-sm-2 col-form-label">Tiêu Chuẩn Phòng</label>
+      <div class="col-sm-10">
+        <input  type="text" class="form-control"  formControlName="standard">
+        <p class="errorForm" *ngIf="formEditGroup.controls.standard.hasError('nullStandard') && formEditGroup.controls.standard.touched"></p>
+
+      </div>
+    </div>
+    <div class="mb-3 row" id="descriptionAdd">
+      <label class="col-sm-2 col-form-label">Mô Tả Khác</label>
+      <div class="col-sm-10">
+        <input  type="text" class="form-control" formControlName="description">
+        <p class="errorForm" *ngIf="formEditGroup.controls.description.hasError('nullDescription') && formEditGroup.controls.description.touched"></p>
+
+      </div>
+    </div>
+    <div class="mb-3 row" id="poolAreaAdd">
+      <label class="col-sm-2 col-form-label">Diện Tích Hồ Bơi</label>
+      <div class="col-sm-10">
+        <input  type="number" class="form-control" formControlName="poolArea">
+        <p class="errorForm" *ngIf="formEditGroup.controls.poolArea.hasError('nullPoolArea') && formEditGroup.controls.poolArea.touched"></p>
+
+      </div>
+
+    <div class="mb-3 row" id="numberOfFloorAdd">
+      <label class="col-sm-2 col-form-label">Số Tầng</label>
+      <div class="col-sm-10">
+        <input  type="number" class="form-control" formControlName="floor">
+        <p class="errorForm" *ngIf="formEditGroup.controls.floor.hasError('nullFloor') && formEditGroup.controls.floor.touched"></p>
+      </div>
+    </div>
+    <div  class="mb-3 row " id="addFreeService">
+      <label class="col-sm-2 col-form-label">Dịch Vụ Miễn Phí</label>
+      <div class="col-sm-10">
+        <input  type="text" class="form-control" formControlName="facilityFree">
+        <p class="errorForm" *ngIf="formEditGroup.controls.facilityFree.hasError('nullFreeFacility') && formEditGroup.controls.facilityFree.touched">Hãy nhập dịch vụ miễn phí đi kèm cho Room</p>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="formEditGroup.invalid" class="btn btn-primary" data-bs-dismiss="modal">Thêm  mới</button>
+
+    </div>
+
+</form>
 </div>
+

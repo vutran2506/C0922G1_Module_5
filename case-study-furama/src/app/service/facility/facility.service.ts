@@ -10,7 +10,6 @@ import {RentType} from '../../model/rent-type';
 })
 export class FacilityService {
 
-
   constructor(private httpClient: HttpClient) { }
 
   getAllFacility(): Observable<Facility[]> {
@@ -27,5 +26,8 @@ export class FacilityService {
   }
   updateFacility(facility: any): Observable<Facility> {
     return this.httpClient.put<Facility>('http://localhost:3000/facilitys/' + facility.id, facility );
+  }
+  finByIdFacility(id: number): Observable<Facility> {
+    return this.httpClient.get<Facility>('http://localhost:3000/facilitys/' + id);
   }
 }

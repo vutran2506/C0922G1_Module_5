@@ -1,0 +1,24 @@
+{
+  "song": [{
+    "id": 1,
+    "name": "Đông",
+    "singer":"Vũ",
+    "category":{
+"id": 1,
+      "name": "Nhạc Trẻ"
+    }
+  }],
+  "category": [{
+    "id": 1,
+    "name": "Nhạc Trẻ"
+  },
+    {
+      "id": 1,
+      "name": "Nhạc Thiếu Nhi"
+    },
+    {
+      "id": 1,
+      "name": "Nhạc Đỏ"
+    }
+  ]
+}
