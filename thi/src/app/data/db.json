@@ -1,0 +1,35 @@
+{
+  "address": [
+    {
+      "id": 1,
+      "name": "Đà nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Huế"
+    },
+    {
+      "id": 3,
+      "name": "Quảng Nam"
+    }
+  ],
+  "mangement": [
+    {
+      "id": 123,
+      "typeCar": "Giường Nằm",
+      "houseCar": "ppppp",
+      "addressStart": {
+        "id": 1,
+        "name": "Đà nẵng"
+      },
+      "addressEnd": {
+        "id": 3,
+        "name": "Quảng Nam"
+      },
+      "phone": "0962649722",
+      "email": "vu@gmail.com",
+      "startDay": "13:00",
+      "endDay": "20:00"
+    }
+  ]
+}

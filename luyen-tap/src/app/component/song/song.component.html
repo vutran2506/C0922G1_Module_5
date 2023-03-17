@@ -1,5 +1,28 @@
-<div>
+<body>
+<br>
+<div class="row">
+  <div class="col-2">
+    <a>
+      <button [routerLink]="['/song/create']" type="button" class="btn btn-primary">Thêm Mới</button>
+    </a>
+  </div>
+  <div class="col-3"></div>
+  <div class="col-7">
 
+    <div class="d-flex m-2">
+      <input class="form-control me-2" type="search" placeholder="Search Name" aria-label="Search" [(ngModel)]="nameSearch">
+      <select class="form-control" [(ngModel)]="cateSearch"
+      >
+        <option [ngValue] = 0 >Thể Loại</option>
+        <option *ngFor="let cate of categories" [ngValue]="cate.id">{{cate.name}}</option>
+      </select>
+      <button class="btn btn-primary" (click)="search()" >Search</button>
+    </div>
+  </div>
+
+</div>
+<br>
+<div>
   <table class="table">
     <thead>
     <tr>
@@ -13,16 +36,44 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let song of songs;index as i">
-      <td scope="row">{{i+1}}</td>
+    <tr *ngFor="let song of songs | paginate: { itemsPerPage: 2, currentPage: page};index as i">
+      <td scope="row">{{i + 1}}</td>
       <td>{{song.name}}</td>
       <td>{{song.singer}}</td>
       <td>{{song.date}}</td>
-      <td>{{song.category}}</td>
-      <td><a>
-        <button type="button" class="btn btn-primary">Edit</button></a></td>
+      <td>{{song.category.name}}</td>
+      <td><a [routerLink]="['/song/edit',song.id]">
+        <button type="button" class="btn btn-primary">Edit</button>
+      </a></td>
+      <td>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                (click)="temp = song">Delete
+        </button>
+      </td>
     </tr>
-    <td><a>
-      <button type="button" class="btn btn-primary">Edit</button></a></td>
+
+    </tbody>
   </table>
+<pagination-controls (pageChange)="page=$event"></pagination-controls>
+</div>
+</body>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        Xoá
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color: red">
+        Bạn có chắc chắn muốn xoá {{temp.name}} không ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="delete(temp.id)" data-bs-dismiss="modal">Delete
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

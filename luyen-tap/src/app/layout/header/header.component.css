@@ -1,0 +1,6 @@
+body {
+  background-image: url("https://tophinhanhdep.com/wp-content/uploads/2021/11/Information-Technology-Wallpapers.jpg"); /* Set the path to your background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-size: cover; /* Scale the image to cover the entire background */
+  background-position: center center; /* Center the image horizontally and vertically */
+}

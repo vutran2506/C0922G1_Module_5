@@ -1,0 +1,39 @@
+<body>
+<div class="d-flex justify-content-center">
+  <form *ngIf="formSong" [formGroup]="formSong" (ngSubmit)="submit()">
+    <h1>Thêm bài bát</h1>
+    <table>
+      <tr>
+        <td>Tên bài hát :</td>
+        <td><input type="text" formControlName="name">
+          <span *ngIf="formSong.controls.name?.touched && formSong.controls.name?.errors?.required">Vui lòng nhập vào đây</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Ca sĩ</td>
+        <td><input type="text" formControlName="singer">
+       <span *ngIf="formSong.controls.singer?.touched && formSong.controls.singer?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td>Ngày phát hành</td>
+        <td><input type="date" formControlName="date">
+        <span *ngIf="formSong.controls.date?.touched && formSong.controls.date?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td>Thể Loại</td>
+        <td><select formControlName="category" >
+<option></option>
+          <option *ngFor="let category of categories;index as i" [ngValue]="category" >{{category.name}}</option>
+        </select>
+        <span *ngIf="formSong.controls.category?.touched && formSong.controls.category?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button [disabled]="formSong.invalid">Tạo mới</button></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+

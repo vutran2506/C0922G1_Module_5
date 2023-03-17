@@ -1,0 +1,29 @@
+
+
+header {
+  background-image: url('https://i.pinimg.com/originals/8f/dd/90/8fdd90a39282fbfbe89a32ea797510d2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-5 {
+  margin-right: 20px;
+}
+
+.widget-tripadvisor-logo {
+  margin-left: 20px;
+}
+
+img {
+  max-height: 100px;
+}

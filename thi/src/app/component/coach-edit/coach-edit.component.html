@@ -1,0 +1,68 @@
+<body>
+<div class="d-flex justify-content-center">
+  <form [formGroup]="formEdit" *ngIf="formEdit" (ngSubmit)="updateCoach(id)">
+    <h1>Cập nhật thông tin sản phẩm</h1>
+    <table>
+      <tr>
+        <td><input hidden type="number" formControlName="id">
+      </tr>
+      <tr>
+        <td>Biển số xe:</td>
+        <td><input type="text" formControlName="numberBus"></td>
+      </tr>
+      <tr>
+        <td>Loại xe:</td>
+        <td>
+          <select  formControlName="coachType" >
+            <option [ngValue]="c" *ngFor="let c of coachTypes">{{c.name}}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Nhà xe</td>
+        <td><input type="date" formControlName="name">
+        </td>
+      </tr>
+      <tr>
+        <td>Điểm đi</td>
+        <td>
+          <select  formControlName="departure" >
+            <option [ngValue]="c" *ngFor="let c of departures">{{c.name}}</option>
+          </select>
+      </tr>
+      <tr>
+        <td>Điểm đến</td>
+        <td>
+          <select  formControlName="destination" >
+            <option [ngValue]="c" *ngFor="let c of destinations">{{c.name}}</option>
+          </select>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="date" formControlName="email">
+        </td>
+      </tr>
+      <tr>
+        <td>Số điên thoại</td>
+        <td><input type="date" formControlName="phone">
+        </td>
+      </tr>
+      <tr>
+        <td>Giờ đi</td>
+        <td><input type="date" formControlName="startTime">
+        </td>
+      </tr>
+      <tr>
+        <td>Giờ đến</td>
+        <td><input type="date" formControlName="eadTime">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button>Cập nhật</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+

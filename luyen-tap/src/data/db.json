@@ -1,23 +1,57 @@
 {
-  "song": [{
-    "id": 1,
-    "name": "Đông",
-    "singer":"Vũ",
-    "category":{
-"id": 1,
-      "name": "Nhạc Trẻ"
+  "song": [
+    {
+      "id": 2,
+      "name": "Tiến Suỹ",
+      "singer": " Ca Sỹ",
+      "date": "12/12/2022",
+      "category": {
+        "id": 1,
+        "name": "Nhạc Trẻ"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Vũ Bão",
+      "singer": "ădw",
+      "date": "adaw",
+      "category": {
+        "id": 2,
+        "name": "Nhạc Thiếu Nhi"
+      }
+    },
+    {
+      "name": "Tiến Sỹ Dỗm ",
+      "singer": "Y Sỹ",
+      "date": "20/10/2000",
+      "category": {
+        "id": 3,
+        "name": "Nhạc Đỏ"
+      },
+      "id": 8
+    },
+    {
+      "name": "Vũ ",
+      "singer": "Đông",
+      "date": "2010-02-10",
+      "category": {
+        "id": 1,
+        "name": "Nhạc Trẻ"
+      },
+      "id": 9
     }
-  }],
-  "category": [{
-    "id": 1,
-    "name": "Nhạc Trẻ"
-  },
+  ],
+  "category": [
     {
       "id": 1,
+      "name": "Nhạc Trẻ"
+    },
+    {
+      "id": 2,
       "name": "Nhạc Thiếu Nhi"
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "Nhạc Đỏ"
     }
   ]

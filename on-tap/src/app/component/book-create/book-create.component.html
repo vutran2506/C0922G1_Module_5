@@ -1,0 +1,38 @@
+<body>
+<div class="d-flex justify-content-center">
+  <form *ngIf="formBook" [formGroup]="formBook" (ngSubmit)="submit()">
+    <h1>Thêm bài bát</h1>
+    <table>
+      <tr>
+        <td>Tên tác phẩm :</td>
+        <td><input type="text" formControlName="name">
+          <span *ngIf="formBook.controls.name?.touched && formBook.controls.name?.errors?.required">Vui lòng nhập vào đây</span>
+        </td>
+      </tr>
+      <tr>
+        <td>tác giả</td>
+        <td><input type="text" formControlName="author">
+          <span *ngIf="formBook.controls.singer?.touched && formBook.controls.singer?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td>Ngày phát hành</td>
+        <td><input type="date" formControlName="startDay">
+          <span *ngIf="formBook.controls.date?.touched && formBook.controls.date?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td>Thể Loại</td>
+        <td><select formControlName="category" >
+
+          <option *ngFor="let category of categories;index as i" [ngValue]="category" >{{category.name}}</option>
+        </select>
+          <span *ngIf="formBook.controls.category?.touched && formBook.controls.category?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button [disabled]="formBook.invalid">Tạo mới</button></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>

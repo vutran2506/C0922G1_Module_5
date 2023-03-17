@@ -1,0 +1,43 @@
+form {
+  background-color: lightskyblue; /* Set background color to dark blue */
+  padding: 20px; /* Add padding to the form */
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); /* Add a shadow effect */
+}
+body {
+  background-image: url("https://tophinhanhdep.com/wp-content/uploads/2021/11/Information-Technology-Wallpapers.jpg"); /* Set the path to your background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-size: cover; /* Scale the image to cover the entire background */
+  background-position: center center; /* Center the image horizontally and vertically */
+}
+table {
+  border-collapse: collapse; /* Collapse the borders of the table */
+  margin: auto; /* Center the table */
+}
+
+td {
+  padding: 10px; /* Add padding to the table cells */
+}
+
+input[type=text], input[type=date], select {
+  width: 100%; /* Set the width of the input and select fields to 100% */
+  padding: 12px 20px; /* Add padding to the input and select fields */
+  margin: 8px 0; /* Add margin to the input and select fields */
+  border: none; /* Remove the borders of the input and select fields */
+  border-radius: 4px; /* Add rounded corners to the input and select fields */
+  box-sizing: border-box; /* Make sure that padding and border are included in the width and height of the input and select fields */
+}
+
+button {
+  background-color: #4CAF50; /* Set background color to green */
+  color: white; /* Set text color to white */
+  padding: 14px 20px; /* Add padding to the button */
+  margin: 8px 0; /* Add margin to the button */
+  border: none; /* Remove the border of the button */
+  border-radius: 4px; /* Add rounded corners to the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+button:hover {
+  background-color: #45a049; /* Change background color to darker green on hover */
+}

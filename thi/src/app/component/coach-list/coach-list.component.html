@@ -1,0 +1,88 @@
+
+<body>
+<br>
+<div class="row">
+  <div class="col-2">
+    <a>
+      <button [routerLink]="['/coach/create']" type="button" class="btn btn-primary">Thêm Mới</button>
+    </a>
+  </div>
+  <div class="col-3"></div>
+  <div class="col-7">
+
+    <div class="d-flex m-2">
+      <input class="form-control me-2" type="search" placeholder="Search Name" aria-label="Search" >
+      <select class="form-control"
+      >
+        <option >Thể Loại</option>
+        <option ></option>
+      </select>
+      <button class="btn btn-primary"  >Search</button>
+    </div>
+  </div>
+
+</div>
+<br>
+<div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Biển số xe</th>
+      <th>Loại xe</th>
+      <th>Nhà xe</th>
+      <th>Điểm đi</th>
+      <th>Điểm đến</th>
+      <th>Email</th>
+      <th>Số điện thoại</th>
+      <th>Giờ đi</th>
+      <th>Giờ đến</th>
+      <th>Sửa</th>
+      <th>Xoá</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let coach of coachList ;index as i">
+      <td >{{coach.numberBus}}</td>
+      <td>{{coach.coachType.name}}</td>
+      <td>{{coach.name}}</td>
+      <td>{{coach.departure.name}}</td>
+      <td>{{coach.destination.name}}</td>
+      <td>{{coach.email}}</td>
+      <td>{{coach.phone}}</td>
+      <td>{{coach.startTime}}</td>
+      <td>{{coach.eadTime}}</td>
+
+      <td><a [routerLink]="['/coach/edit',coach.id]">
+        <button type="button" class="btn btn-primary">Edit</button>
+      </a></td>
+      <td>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                (click)="temp = coach">Delete
+        </button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+</body>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        Xoá
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color: red">
+        Bạn có chắc chắn muốn xoá {{temp.name}} không ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="delete(temp.id)" data-bs-dismiss="modal">Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

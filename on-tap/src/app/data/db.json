@@ -1,0 +1,58 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Kinh Dị"
+    },
+    {
+      "id": 2,
+      "name": "Ngôn Tình"
+    },
+    {
+      "id": 3,
+      "name": "Trinh Thám"
+    }
+  ],
+  "book": [
+    {
+      "id": 1,
+      "name": "Vợ Nhặt",
+      "author": "Kim Lân",
+      "startDay": "20/10/2010",
+      "category": {
+        "id": 1,
+        "name": "Kinh Dị"
+      }
+    },
+    {
+      "name": "dada",
+      "author": "sada",
+      "startDay": "2023-03-15",
+      "category": {
+        "id": 2,
+        "name": "Ngôn Tình"
+      },
+      "id": 3
+    },
+    {
+      "name": "ưdqe",
+      "author": "qewqeq",
+      "startDay": "2023-03-08",
+      "category": {
+        "id": 3,
+        "name": "Trinh Thám"
+      },
+      "id": 4
+    },
+    {
+      "name": "dsdaaada",
+      "author": "ádada",
+      "startDay": "2023-03-09",
+      "category": {
+        "id": 1,
+        "name": "Kinh Dị"
+      },
+      "id": 5
+    }
+  ]
+}

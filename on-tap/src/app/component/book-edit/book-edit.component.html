@@ -1,0 +1,40 @@
+<body>
+<div class="d-flex justify-content-center">
+  <form [formGroup]="formEdit" *ngIf="formEdit" (ngSubmit)="updateProduct(id)">
+    <h1>Cập nhật thông tin sản phẩm</h1>
+    <table>
+      <tr>
+        <td><input hidden type="number" formControlName="id">
+          <span *ngIf="formEdit.controls.name?.touched && formEdit.controls.name?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td>Tên tác phẩm:</td>
+        <td><input type="text" formControlName="name"></td>
+      </tr>
+      <tr>
+        <td>Tác giả</td>
+        <td><input type="text" formControlName="author">
+          <span *ngIf="formEdit.controls.singer?.touched && formEdit.controls.singer?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td>Ngày phát hành</td>
+        <td><input type="date" formControlName="startDay">
+          <span *ngIf="formEdit.controls.date?.touched && formEdit.controls.date?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td>Thể loại</td>
+        <td>
+          <select  formControlName="category" >
+            <option [ngValue]="c" *ngFor="let c of categories">{{c.name}}</option>
+          </select>
+          <span *ngIf="formEdit.controls.category?.touched && formEdit.controls.category?.errors?.required">Vui lòng nhập vào đây</span></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button>Cập nhật</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+
