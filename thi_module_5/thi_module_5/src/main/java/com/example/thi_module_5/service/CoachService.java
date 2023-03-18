@@ -20,4 +20,14 @@ public class CoachService implements ICoachService{
     public void deleteCoach(int id) {
         this.iCoachRepository.deleteByID(id);
     }
+
+    @Override
+    public void createCoach(String number_bus, int coach_type_id, String name, int bus_station_id, int destination_id, String email, String phone, String start_time, String ead_time) {
+        this.iCoachRepository.createCoach(number_bus,coach_type_id,name,bus_station_id,destination_id, email, phone,start_time,ead_time );
+    }
+
+    @Override
+    public void updateCoach(String number_bus, int coach_type_id, String name, int bus_station_id, int destination_id, String email, String phone, String start_time, String ead_time,int id) {
+        this.iCoachRepository.updateCoach(number_bus,coach_type_id,name,bus_station_id,destination_id, email, phone,start_time,ead_time,id );
+    }
 }

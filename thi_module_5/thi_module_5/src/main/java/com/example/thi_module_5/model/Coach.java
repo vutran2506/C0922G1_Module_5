@@ -1,5 +1,6 @@
 package com.example.thi_module_5.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -16,20 +17,15 @@ public class Coach {
     private String startTime;
     private String eadTime;
     @ManyToOne
-    @JoinColumn(name = "busStation_id", referencedColumnName = "id")
-@JsonManagedReference
+    @JoinColumn(name = "departure_id", referencedColumnName = "id")
     private Departure departure;
 
     @ManyToOne
     @JoinColumn(name = "coachType_id", referencedColumnName = "id")
-    @JsonManagedReference
-
     private CoachType coachType;
 
     @ManyToOne
     @JoinColumn(name = "destination_id", referencedColumnName = "id")
-    @JsonManagedReference
-
     private Destination destination;
 
     public Coach() {
@@ -115,4 +111,6 @@ public class Coach {
     public void setDestination(Destination destination) {
         this.destination = destination;
     }
+
+
 }

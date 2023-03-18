@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ICoachTypeRepository extends JpaRepository<CoachType,Integer> {
-    @Query(value = "select *from coachType",nativeQuery = true)
-    List<CoachType> findAll();
+    @Query(value = "select *from coach_type",nativeQuery = true)
+    List<CoachType> findAllCoachType();
 }

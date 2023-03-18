@@ -11,6 +11,6 @@ export class DestinationService {
 
   constructor(private httpClient: HttpClient) { }
   getAllDestination(): Observable<Destination[]> {
-    return this.httpClient.get<Destination[]>(' http://localhost:3000/Coach');
+    return this.httpClient.get<Destination[]>(' http://localhost:8080/api/destination');
   }
 }

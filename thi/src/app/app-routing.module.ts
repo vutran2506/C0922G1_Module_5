@@ -6,6 +6,7 @@ import {CoachEditComponent} from "./component/coach-edit/coach-edit.component";
 
 
 
+
 const routes: Routes = [
   {
     path: 'coach',
@@ -16,7 +17,7 @@ const routes: Routes = [
     component: CoachCreateComponent
   },
   {
-    path: 'coach/edit',
+    path:'coach/edit/:numberBus',
     component: CoachEditComponent
   }
 ];

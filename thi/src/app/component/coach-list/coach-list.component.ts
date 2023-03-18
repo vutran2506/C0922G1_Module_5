@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 })
 export class CoachListComponent implements OnInit {
 coachList: Coach[]= [];
+totalPage =0;
+page = 0;
 coach: any
   temp: Coach = {};
 
@@ -25,8 +27,10 @@ coach: any
   }
  getAllCoach(){
     this.coachService.getAllCoach().subscribe( items => {
-      this.coach = items;
-      this.coachList =this.coach.content
+      this.coachList = items;
+
+
+
     })
  }
 
@@ -42,5 +46,11 @@ coach: any
         });
       });
     }
+  }
+
+  changePage(number: number) {
+    this.coachService.changePage(number).subscribe(next => {
+      this.coachList = next;
+    });
   }
 }

@@ -14,6 +14,6 @@ public class CoachTypeService implements ICoachTypeService{
     private ICoachTypeRepository iCoachTypeRepository;
     @Override
     public List<CoachType> getAllCoachType() {
-        return iCoachTypeRepository.findAll();
+        return iCoachTypeRepository.findAllCoachType();
     }
 }

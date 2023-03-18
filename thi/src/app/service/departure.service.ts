@@ -11,6 +11,6 @@ export class DepartureService {
 
   constructor(private httpClient: HttpClient) { }
   getAllDeparture(): Observable<Departure[]> {
-    return this.httpClient.get<Departure[]>(' http://localhost:3000/Coach');
+    return this.httpClient.get<Departure[]>(' http://localhost:8080/api/departure');
   }
 }

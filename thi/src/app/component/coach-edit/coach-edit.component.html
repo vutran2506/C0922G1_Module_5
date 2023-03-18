@@ -1,6 +1,6 @@
 <body>
 <div class="d-flex justify-content-center">
-  <form [formGroup]="formEdit" *ngIf="formEdit" (ngSubmit)="updateCoach(id)">
+  <form [formGroup]="formEdit" *ngIf="formEdit" (ngSubmit)="updateCoach(numberBus)">
     <h1>Cập nhật thông tin sản phẩm</h1>
     <table>
       <tr>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <td>Email</td>
-        <td><input type="date" formControlName="email">
+        <td><input type="text" formControlName="email">
         </td>
       </tr>
       <tr>
@@ -49,12 +49,12 @@
       </tr>
       <tr>
         <td>Giờ đi</td>
-        <td><input type="date" formControlName="startTime">
+        <td><input type="time" formControlName="startTime">
         </td>
       </tr>
       <tr>
         <td>Giờ đến</td>
-        <td><input type="date" formControlName="eadTime">
+        <td><input type="time" formControlName="eadTime">
         </td>
       </tr>
       <tr>

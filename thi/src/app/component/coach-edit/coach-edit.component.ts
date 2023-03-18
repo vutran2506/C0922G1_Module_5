@@ -20,9 +20,8 @@ export class CoachEditComponent implements OnInit {
   coachTypes: CoachType[] = [];
   departures: Departure[] = [];
   destinations: Destination[] = [];
-  coaches: Coach[] = [];
   formEdit: FormGroup;
-   id: number;
+   numberBus: string;
 
   constructor(private coachService: CoachService,
               private coachTypeService: CoachTypeService,
@@ -34,13 +33,13 @@ export class CoachEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(paramMap => {
-      this.id = +paramMap.get('id');
-      this.getCoach(this.id);
+      this.numberBus = paramMap.get('numberBus');
+      this.getCoach(this.numberBus);
     });
   }
 
-  getCoach(id: number) {
-    this.coachService.findById(id).subscribe(item => {
+  getCoach(numberBus: string) {
+    this.coachService.findById(numberBus).subscribe(item => {
       this.coachTypeService.getAllCoachType().subscribe(a => {
         this.coachTypes = a;
         this.departureService.getAllDeparture().subscribe(b => {
@@ -65,7 +64,7 @@ export class CoachEditComponent implements OnInit {
     });
   }
 
-  updateCoach(id: number) {
+  updateCoach(id: string) {
       const song = this.formEdit.value;
       this.coachService.update(id, song).subscribe(() => {
         Swal.fire({

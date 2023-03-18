@@ -41,7 +41,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let coach of coachList ;index as i">
+    <tr *ngFor="let coach of coachList['content'] ;index as i">
       <td >{{coach.numberBus}}</td>
       <td>{{coach.coachType.name}}</td>
       <td>{{coach.name}}</td>
@@ -52,7 +52,7 @@
       <td>{{coach.startTime}}</td>
       <td>{{coach.eadTime}}</td>
 
-      <td><a [routerLink]="['/coach/edit',coach.id]">
+      <td><a [routerLink]="['/coach/edit',coach.numberBus]">
         <button type="button" class="btn btn-primary">Edit</button>
       </a></td>
       <td>
@@ -65,6 +65,9 @@
 
     </tbody>
   </table>
+  <button style="margin-left: 540px;"  (click)="changePage(coachList['number'] - 1)" class="btn btn-outline-info ">Previous</button>
+  <span style="margin-left: 10px;" class="btn btn-outline-info ">{{coachList['number'] + 1}}</span>
+  <button  style="margin-left: 10px;" (click)="changePage(coachList['number'] + 1)" class="btn btn-outline-info ">Next</button>
 </div>
 </body>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
